@@ -1,3 +1,4 @@
+// Formulario de registro
 document.getElementById("formularioRegistro").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
 
@@ -80,6 +81,8 @@ function limpiarFormulario() {
         input.classList.remove("valido");
         input.classList.remove("invalido");
     });
+
+    //----------------------------------------------------------------------------------------------------------------------------------
 
     document.querySelectorAll(".mensaje-error").forEach((mensaje) => {
         mensaje.textContent = "";
