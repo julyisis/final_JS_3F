@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Trabajo Final 3F</title>
+</head>
+
+<body>
+    <h1 class="titulo">TRABAJO FINAL TECNO 3F</h1>
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#content">Contenido</a></li>            
+                <li><a href="#form">Formulario</a></li>
+            </ul>
+        </nav>
+            
+    </header>
+    <main>
+        <section id="home">
+            <h2>Bienvenidos</h2>
+            <p>Este es un sitio web de ejemplo creado como trabajo final del curso de JavaScript.</p>
+        </section>
+        <section id="content">
+            <h2>Contenido Principal</h2>
+            <p>Aquí puedes incluir información relevante según la temática elegida.</p>
+        </section>
+        <div class="contenedor">
+            <h3 class="centrado">FORMULARIO DE REGISTRO</h3>
+            <form id="formularioRegistro" onsubmit="return validarFormulario(event)" class="formulario">
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" oninput="validarnombre()" class="input">
+                    <p id="errorNombre" class="mensaje-error"></p>
+                </div>
+                <div class="campo">
+                    <label for="correo">Correo Electronico</label>
+                    <input type="email" id="correo" oninput="validarCorreo()" class="input">
+                    <p id="errorCorreo" class="mensaje-error"></p>
+                </div>
+                <div class="campo">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" oninput="validarContraseña()" class="input">
+                    <p id="errorContrasena" class="mensaje-error"></p>
+                </div>
+                <div class="contenedor-boton">
+                <button type="submit" class="boton">Enviar</button>
+                </div>
+            </form>
+            <p id="exitoFormulario" class="mensaje-exito"></p>
+        </div>
+        <script src="./app.js"></script>
+    </main>
+</body>
+</html>
