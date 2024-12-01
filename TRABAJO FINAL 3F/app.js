@@ -1,3 +1,52 @@
+// slider
+const btnLeft = document.querySelector(".btn-left"),
+    btnRight = document.querySelector(".btn-right"),
+    slider = document.querySelector("#slider"),
+    sliderSection = document.querySelectorAll(".slider-section");
+
+let operacion = 0,
+    counter = 0,
+    widthImg = 100 / sliderSection.length;
+
+// Botones de navegación
+btnLeft.addEventListener("click", () => moveToLeft());
+btnRight.addEventListener("click", () => moveToRight());
+
+// Movimiento automático
+setInterval(() => {
+    moveToRight();
+}, 5000);
+
+function moveToRight() {
+    if (counter >= sliderSection.length - 1) {
+        counter = 0;
+        operacion = 0;
+        slider.style.transition = "none";
+    } else {
+        counter++;
+        operacion += widthImg;
+        slider.style.transition = "transform 1.5s ease-in-out";
+    }
+    slider.style.transform = `translateX(-${operacion}%)`;
+}
+
+function moveToLeft() {
+    if (counter <= 0) {
+        counter = sliderSection.length - 1;
+        operacion = widthImg * counter;
+        slider.style.transition = "none";
+    } else {
+        counter--;
+        operacion -= widthImg;
+        slider.style.transition = "transform 1.5s ease-in-out";
+    }
+    slider.style.transform = `translateX(-${operacion}%)`;
+}
+
+
+
+//----------------------------------------------------------------------------------------------------------
+
 // Formulario de registro
 document.getElementById("formularioRegistro").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
