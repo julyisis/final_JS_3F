@@ -1,33 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+    
+    
     <link rel="stylesheet" href="./styles.css">
     <title>Trabajo Final 3F</title>
 </head>
 
 <body>
-    <h1 class="titulo">TRABAJO FINAL TECNO 3F</h1>
-    <header id="header">
-        <nav>
-            <ul>
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#content">Contenido</a></li>            
-                <li><a href="#form">Formulario</a></li>
-            </ul>
-        </nav>
-            
+    <div class="header-container">
+        <h1 class="titulo">TRABAJO FINAL TECNO 3F</h1>
+        <header id="header">
+            <nav>
+                <ul class="contenedor-nav">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#destacados">Destacados</a></li>
+                    <li><a href="#form">Contacto</a></li>
+                </ul>
+            </nav>
+    </div>
     </header>
     <main>
-        <section id="home">
-            <h2>Bienvenidos</h2>
-            <p>Este es un sitio web de ejemplo creado como trabajo final del curso de JavaScript.</p>
+        <section id="#inicio">
+            <h2 class="titulo-inicio">Tecno Movie</h2>
+            <p class="texto">Estamos emocionados de tenerte a bordo en nuestra comunidad de cinefilos. En esta página, podrás encontrar calificaciones y reseñas de películas de todo el mundo, junto con sus respectivos trailers. Nuestro objetivo es brindarte una plataforma para descubrir nuevas películas, compartir opiniones y conectarte con otros amantes del cine.</p>
         </section>
-        <section id="content">
-            <h2>Contenido Principal</h2>
-            <p>Aquí puedes incluir información relevante según la temática elegida.</p>
-        </section>
+        <h2 class="titulo-destacados">Destacado Hoy</h2>
+        <div class="destacados">                    
+            <div class="container-carousel">
+                <div class="carruseles" id="slider">
+                    <section class="slider-section">
+                        <img src="./image/Borderlands.jpg" alt="Borderlands">
+                    </section>
+                    <section class="slider-section">
+                        <img src="./image/Gladiador 2.jpg" alt="Gladiador">
+                    </section>
+                    <section class="slider-section">
+                        <img src="./image/Red One..jpg" alt="Red One">
+                    </section>
+                    <section class="slider-section">
+                        <img src="./image/The Crow.jpg" alt="The Crow">
+                    </section>
+                    <section class="slider-section">
+                        <img src="./image/The Wild Robot.jpg" alt="The Wild Robot">
+                    </section>
+                    <section class="slider-section">
+                        <img src="./image/Venom.jpg" alt="Venom">
+                    </section>
+                </div>
+                <div class="btn-left"><</div>
+                <div class="btn-right">></div>
+            </div>
+        </div>
         <div class="contenedor">
             <h3 class="centrado">FORMULARIO DE REGISTRO</h3>
             <form id="formularioRegistro" onsubmit="return validarFormulario(event)" class="formulario">
