@@ -1,3 +1,187 @@
 body{
     margin: 0;
+    background: antiquewhite;
+}
+
+.header-container {
+    position: relative; /* Necesario para posicionar el contenido */
+    padding: 20px 0;
+}
+
+.header-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./image/thumbbig-1356453.png); /*imagen de fondo para el header*/
+    background-size: 100% 400px;
+    background-position: top;
+    background-repeat: no-repeat;
+    opacity: 0.8; /* Opacidad solo para la imagen */
+    z-index: 1; /* Coloca la imagen detrás del contenido */
+    
+}
+
+.titulo, #header {
+    position: relative; /* Asegura que queden sobre el pseudo-elemento */
+    z-index: 2; /* Coloca el contenido sobre la imagen de fondo */
+}
+
+
+.titulo{
+    font-family: "Jaro", sans-serif;
+    font-weight: bold;
+    color: #ae57ff;
+    font-size: 44px;
+    display: flex;
+    justify-content: center;
+    border: 7px solid;
+    border-radius: 10px;
+    
+}
+
+.contenedor-nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    list-style: none;
+}
+
+.contenedor-nav li{
+    width: 100px;
+}
+
+.contenedor-nav li a{
+    text-decoration: none;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.titulo-inicio{
+    font-family: "Ruwudu", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.texto{
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    border: 7px solid;
+    border-radius: 10px;
+    border-color: cadetblue;
+    padding: 8px 20px;
+}
+/*---------------------------------------------------------------------------------------------------------*/
+.titulo-destacados{
+    font-family: "Merriweather", serif;
+    margin: 0 30px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.destacados{
+    height: 100vh;
+    display: flex;
+    margin: 35px;
+    justify-content: center;
+    padding: 20px; 
+}
+
+.container-carousel {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background-color: #e0e0e0;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.66);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.carruseles {
+    width: 600%; /* 100% * cantidad de imágenes */
+    height: 100%;
+    display: flex;
+    transition: transform 1.5s ease-in-out; /* Agrega transición aquí */
+}
+
+.slider-section {
+    width: calc(100% / 6); /* Ajusta a la cantidad de imágenes */
+    height: 100%;
+}
+
+.slider-section img {
+    margin: 0 135px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.btn-left,
+.btn-right {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    font-size: 2.5rem;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff81;
+    transform: translate(0,-50%);
+    transition: .5s ease;
+    user-select: none;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+    background-color: #333333d4;
+    color: #fff;
+}
+
+.btn-left {
+    left: 10px;
+}
+
+.btn-right {
+    right: 10px;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------*/
+/*Formulario*/
+
+.contacto{
+    display: flex;/*display automatica y flexible de los elementos*/
+    align-content: stretch;/* Las líneas se estiran para llenar el espacio disponible en el eje transversal */
+    flex-wrap: wrap;/* Los elementos se envuelven en múltiples líneas si es necesario */
+    flex-direction: column;/* Los elementos se organizan en una columna vertical */
+    padding: 39px 26px 39px 26px;/*ubicacion*/
+    border: solid white 2px;/*borde del recuadro*/
+    border-radius: 30px;/*redondeo de las esquinas*/
+    width: auto;/* el tamaño se ajusta automáticamente para mantener la proporción original */
+    font-size: 16px
+}
+
+.campo input{
+    width: 100%;/*espacio de la entrada de texto*/
+    text-align: center;/*testo alineado al centro*/
+    border-radius: 10px;/*redondeo de esquinas*/
+    padding: 3px;/*ubicacion*/
+}
+
+.campo textarea {
+    width: 100%;/*tamaño*/
+    border-radius: 10px;/*redondeo de esquinas*/
+}
+
+form{
+    width: 500px;/*ancho del formulario*/
+    margin: 0 10px 40px;/*margenes*/
 }
