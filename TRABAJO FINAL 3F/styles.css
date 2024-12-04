@@ -153,35 +153,99 @@ body{
     right: 10px;
 }
 
-
 /*----------------------------------------------------------------------------------------------------------*/
 /*Formulario*/
 
-.contacto{
-    display: flex;/*display automatica y flexible de los elementos*/
-    align-content: stretch;/* Las líneas se estiran para llenar el espacio disponible en el eje transversal */
-    flex-wrap: wrap;/* Los elementos se envuelven en múltiples líneas si es necesario */
-    flex-direction: column;/* Los elementos se organizan en una columna vertical */
-    padding: 39px 26px 39px 26px;/*ubicacion*/
-    border: solid white 2px;/*borde del recuadro*/
-    border-radius: 30px;/*redondeo de las esquinas*/
-    width: auto;/* el tamaño se ajusta automáticamente para mantener la proporción original */
-    font-size: 16px
+/* Estilos para los campos válidos e inválidos */
+input.valido, textarea.valido {
+    border: 2px solid green; /* Borde verde para campos válidos */
+    background-color: #e8f9e8; /* Fondo ligeramente verde */
 }
 
-.campo input{
-    width: 100%;/*espacio de la entrada de texto*/
-    text-align: center;/*testo alineado al centro*/
-    border-radius: 10px;/*redondeo de esquinas*/
-    padding: 3px;/*ubicacion*/
+input.invalido, textarea.invalido {
+    border: 2px solid red; /* Borde rojo para campos inválidos */
+    background-color: #f9e8e8; /* Fondo ligeramente rojo */
 }
 
-.campo textarea {
-    width: 100%;/*tamaño*/
-    border-radius: 10px;/*redondeo de esquinas*/
+/* Estilo de mensaje de error */
+.mensaje-error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    padding: 5px 0;
 }
 
-form{
-    width: 500px;/*ancho del formulario*/
-    margin: 0 10px 40px;/*margenes*/
+/* Estilo del mensaje de éxito */
+.mensaje-exito {
+    color: green;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px 0;
+}
+
+/* Estilo para los botones de acción en el formulario */
+.boton {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Efecto de escalado */
+}
+
+/* Mejorar la visibilidad de los errores */
+.campo input:focus, .campo textarea:focus {
+    border: 2px solid #4CAF50; /* Borde verde al hacer focus */
+    outline: none; /* Elimina el borde azul por defecto al hacer focus */
+}
+
+/* Contenedor del formulario */
+.formulario {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Ajustes para el contenedor de campos */
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.campo input, .campo textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* Estilo para el formulario centrado */
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
 }

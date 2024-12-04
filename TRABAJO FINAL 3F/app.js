@@ -13,10 +13,19 @@ btnLeft.addEventListener("click", () => moveToLeft());
 btnRight.addEventListener("click", () => moveToRight());
 
 // Movimiento automático
-setInterval(() => {
+let autoSlider = setInterval(() => {
     moveToRight();
 }, 5000);
 
+// Detener el slider automático cuando el usuario hace clic en los botones
+function stopAutoSlider() {
+    clearInterval(autoSlider);
+    autoSlider = setInterval(() => {
+        moveToRight();
+    }, 5000); // Reiniciar el intervalo
+}
+
+// Funciones de movimiento del slider
 function moveToRight() {
     if (counter >= sliderSection.length - 1) {
         counter = 0;
@@ -28,6 +37,7 @@ function moveToRight() {
         slider.style.transition = "transform 1.5s ease-in-out";
     }
     slider.style.transform = `translateX(-${operacion}%)`;
+    stopAutoSlider();
 }
 
 function moveToLeft() {
@@ -41,44 +51,39 @@ function moveToLeft() {
         slider.style.transition = "transform 1.5s ease-in-out";
     }
     slider.style.transform = `translateX(-${operacion}%)`;
+    stopAutoSlider();
 }
 
-
-
-//----------------------------------------------------------------------------------------------------------
-
-// Formulario de registro
-document.getElementById("formularioRegistro").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+// Validar formulario al enviar
+function validarFormulario(event) {
+    event.preventDefault(); // Prevenir el envío del formulario por defecto
 
     // Validar todos los campos
-    const esNombreValido = validarNombre();
+    const esNombreValido = validarnombre();
     const esCorreoValido = validarCorreo();
-    const esContrasenaValida = validarContrasena();
+    const esMensajeValido = validarMensaje();
 
-    // Si todos los campos son válidos
-    if (esNombreValido && esCorreoValido && esContrasenaValida) {
-        document.getElementById("exitoFormulario").textContent = "Formulario enviado correctamente.";
+    // Verificar si todos los campos son válidos
+    if (esNombreValido && esCorreoValido && esMensajeValido) {
+        mostrarExito("Formulario enviado correctamente.");
         limpiarFormulario(); // Limpia los campos
+        return true;
     } else {
-        document.getElementById("exitoFormulario").textContent = ""; // Limpia mensaje de éxito si hay errores
+        mostrarExito(""); // Limpia mensaje de éxito si hay errores
+        return false;
     }
-});
+}
 
 // Validar campo de nombre
-function validarNombre() {
+function validarnombre() {
     const nombre = document.getElementById("nombre");
     const errorNombre = document.getElementById("errorNombre");
 
     if (nombre.value.trim() === "") {
-        errorNombre.textContent = "El nombre no puede estar vacío.";
-        nombre.classList.add("invalido");
-        nombre.classList.remove("valido");
+        mostrarError(errorNombre, nombre, "El nombre no puede estar vacío.");
         return false;
     } else {
-        errorNombre.textContent = "";
-        nombre.classList.add("valido");
-        nombre.classList.remove("invalido");
+        limpiarError(errorNombre, nombre);
         return true;
     }
 }
@@ -90,43 +95,60 @@ function validarCorreo() {
     const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!regexCorreo.test(correo.value.trim())) {
-        errorCorreo.textContent = "El correo electrónico no es válido.";
-        correo.classList.add("invalido");
-        correo.classList.remove("valido");
+        mostrarError(errorCorreo, correo, "El correo electrónico no es válido.");
         return false;
     } else {
-        errorCorreo.textContent = "";
-        correo.classList.add("valido");
-        correo.classList.remove("invalido");
+        limpiarError(errorCorreo, correo);
         return true;
     }
 }
 
-// Validar campo de contraseña
-function validarContrasena() {
-    const contrasena = document.getElementById("contrasena");
-    const errorContrasena = document.getElementById("errorContrasena");
+// Validar campo de mensaje
+function validarMensaje() {
+    const mensaje = document.getElementById("mensaje");
+    const errorMensaje = document.getElementById("errorMensaje");
 
-    if (contrasena.value.trim().length < 8) {
-        errorContrasena.textContent = "La contraseña debe tener al menos 8 caracteres.";
-        contrasena.classList.add("invalido");
-        contrasena.classList.remove("valido");
+    if (mensaje.value.trim().length < 10) {
+        mostrarError(errorMensaje, mensaje, "El mensaje debe tener al menos 10 caracteres.");
         return false;
     } else {
-        errorContrasena.textContent = "";
-        contrasena.classList.add("valido");
-        contrasena.classList.remove("invalido");
+        limpiarError(errorMensaje, mensaje);
         return true;
     }
 }
 
-// Limpia el formulario después de enviarlo
+// Mostrar mensaje de error
+function mostrarError(mensajeError, campo, texto) {
+    mensajeError.textContent = texto;
+    campo.classList.add("invalido");
+    campo.classList.remove("valido");
+}
+
+// Limpiar mensaje de error
+function limpiarError(mensajeError, campo) {
+    mensajeError.textContent = "";
+    campo.classList.add("valido");
+    campo.classList.remove("invalido");
+}
+
+// Mostrar mensaje de éxito
+function mostrarExito(mensaje) {
+    const exitoFormulario = document.getElementById("exitoFormulario");
+    exitoFormulario.textContent = mensaje;
+    if (mensaje) {
+        exitoFormulario.classList.add("mensaje-exito");
+    } else {
+        exitoFormulario.classList.remove("mensaje-exito");
+    }
+}
+
+// Limpiar el formulario después de enviarlo
 function limpiarFormulario() {
     const formulario = document.getElementById("formularioRegistro");
     formulario.reset(); // Limpia los campos del formulario
 
-    // Remover clases y mensajes de error
-    document.querySelectorAll("input").forEach((input) => {
+    // Remover clases de validación
+    document.querySelectorAll("input, textarea").forEach((input) => {
         input.classList.remove("valido");
         input.classList.remove("invalido");
     });
@@ -135,6 +157,4 @@ function limpiarFormulario() {
         mensaje.textContent = "";
     });
 }
-
-//----------------------------------------------------------------------------------------------------------------------------------
 
