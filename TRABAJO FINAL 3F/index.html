@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
-    
-    
     <link rel="stylesheet" href="./styles.css">
     <title>Trabajo Final 3F</title>
 </head>
@@ -21,15 +20,20 @@
                     <li><a href="#form">Contacto</a></li>
                 </ul>
             </nav>
+        </header>
     </div>
-    </header>
+
     <main>
-        <section id="#inicio">
+        <section id="inicio">
             <h2 class="titulo-inicio">Tecno Movie</h2>
-            <p class="texto">Estamos emocionados de tenerte a bordo en nuestra comunidad de cinefilos. En esta página, podrás encontrar calificaciones y reseñas de películas de todo el mundo, junto con sus respectivos trailers. Nuestro objetivo es brindarte una plataforma para descubrir nuevas películas, compartir opiniones y conectarte con otros amantes del cine.</p>
+            <p class="texto">Estamos emocionados de tenerte a bordo en nuestra comunidad de cinefilos. En esta página,
+                podrás encontrar calificaciones y reseñas de películas de todo el mundo, junto con sus respectivos
+                trailers. Nuestro objetivo es brindarte una plataforma para descubrir nuevas películas, compartir
+                opiniones y conectarte con otros amantes del cine.</p>
         </section>
+
         <h2 class="titulo-destacados">Destacado Hoy</h2>
-        <div class="destacados">                    
+        <div class="destacados">
             <div class="container-carousel">
                 <div class="carruseles" id="slider">
                     <section class="slider-section">
@@ -51,35 +55,41 @@
                         <img src="./image/Venom.jpg" alt="Venom">
                     </section>
                 </div>
-                <div class="btn-left"><</div>
+                <div class="btn-left">
+                    < </div> <!-- Corregido aquí el error en el código -->
                 <div class="btn-right">></div>
             </div>
         </div>
+
         <div class="contenedor">
             <h3 class="centrado">FORMULARIO DE REGISTRO</h3>
             <form id="formularioRegistro" onsubmit="return validarFormulario(event)" class="formulario">
                 <div class="campo">
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" oninput="validarnombre()" class="input">
+                    <input type="text" id="nombre" oninput="validarnombre()" class="input" required>
                     <p id="errorNombre" class="mensaje-error"></p>
                 </div>
                 <div class="campo">
-                    <label for="correo">Correo Electronico</label>
-                    <input type="email" id="correo" oninput="validarCorreo()" class="input">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" oninput="validarCorreo()" class="input" required>
                     <p id="errorCorreo" class="mensaje-error"></p>
                 </div>
                 <div class="campo">
-                    <label for="contrasena">Contraseña</label>
-                    <input type="password" id="contrasena" oninput="validarContraseña()" class="input">
-                    <p id="errorContrasena" class="mensaje-error"></p>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" rows="4" oninput="validarMensaje()" class="input" required></textarea>
+                    <p id="errorMensaje" class="mensaje-error"></p>
                 </div>
                 <div class="contenedor-boton">
-                <button type="submit" class="boton">Enviar</button>
+                    <button type="submit" class="boton">Enviar</button>
                 </div>
             </form>
             <p id="exitoFormulario" class="mensaje-exito"></p>
         </div>
-        <script src="./app.js"></script>
+    
+
     </main>
+
+    <script src="./app.js"></script>
 </body>
+
 </html>
