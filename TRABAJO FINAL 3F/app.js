@@ -54,6 +54,150 @@ function moveToLeft() {
     stopAutoSlider();
 }
 
+
+
+/*
+// Escucha el evento cuando se presiona el botón de buscar película
+
+document.addEventListener('DOMContentLoaded', async () => {
+    // Cargar un catálogo inicial de películas cuando la página se carga
+    const resultado = await fetchData(1, 'en-US'); // Puedes ajustar el número de página y el idioma
+    mostrarPeliculas(resultado);
+});
+
+// Botón para buscar películas
+const form = document.querySelector('form');
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const page = document.querySelector('#page').value;
+    const language = document.querySelector('#language').value;
+
+    if (!page || !language) {
+        alert("Por favor, completa todos los campos del formulario");
+        return;
+    }
+
+    const resultado = await fetchData(page, language);
+    mostrarPeliculas(resultado);
+});
+
+// Función para obtener los datos de la API
+async function fetchData(page = 1, language = 'en-US') {
+    const api_key = '2b719c6244e57467501b00d55f757976';
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=${language}&page=${page}`;
+    console.log('Consultando API con URL: ', url);
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Error en la solicitud: ' + response.status);
+        }
+        const json = await response.json();
+        return json;
+    } catch (error) {
+        console.error('Error al consumir la API:', error);
+    }
+}
+
+// Función para mostrar las películas en el catálogo
+function mostrarPeliculas(resultado) {
+    const output = document.querySelector('#output');
+    output.innerHTML = ''; // Limpiar los resultados anteriores
+
+    if (resultado && resultado.results) {
+        resultado.results.forEach(pelicula => {
+            const title = pelicula.original_title;
+            const description = pelicula.overview;
+            const poster = pelicula.poster_path;
+            const imgURL = poster ? `https://image.tmdb.org/t/p/w500/${poster}` : 'ruta/a/imagen_por_defecto.jpg';
+
+            output.innerHTML += `
+                <article>
+                    <img src="${imgURL}" alt="${title}">
+                    <h2>${title}</h2>
+                    <p>${description}</p>
+                </article>`;
+        });
+    } else {
+        output.innerHTML = '<p>No se encontraron resultados.</p>';
+    }
+}*/
+
+// Clave API y base URL de la API
+const apiKey = '2b719c6244e57467501b00d55f757976';
+const baseURL = 'https://api.themoviedb.org/3';
+
+// Función para obtener el catálogo de películas
+async function fetchCatalogo(page = 1, language = 'es-ES') {
+    const url = `${baseURL}/discover/movie?api_key=${apiKey}&language=${language}&page=${page}`;
+    console.log('Consultando API con URL:', url);
+    
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
+        const data = await response.json();
+        mostrarPeliculas(data);
+    } catch (error) {
+        console.error('Error al consumir la API:', error);
+    }
+}
+
+// Función para buscar películas por nombre
+async function buscarPelicula(nombre) {
+    const url = `${baseURL}/search/movie?api_key=${apiKey}&query=${encodeURIComponent(nombre)}&language=es-ES`;
+    console.log('Consultando API con URL:', url);
+    
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
+        const data = await response.json();
+        mostrarPeliculas(data);
+    } catch (error) {
+        console.error('Error al buscar la película:', error);
+    }
+}
+
+// Función para mostrar películas en el DOM
+function mostrarPeliculas(data) {
+    const output = document.querySelector('#output');
+    output.innerHTML = ''; // Limpiar contenido anterior
+
+    if (data && data.results.length > 0) {
+        data.results.forEach(pelicula => {
+            const { original_title, overview, poster_path } = pelicula;
+            const imgURL = poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : 'ruta/a/imagen_por_defecto.jpg';
+
+            output.innerHTML += `
+                <article>
+                    <img src="${imgURL}" alt="${original_title}">
+                    <h2>${original_title}</h2>
+                    <p>${overview}</p>
+                </article>`;
+        });
+    } else {
+        output.innerHTML = '<p>No se encontraron resultados.</p>';
+    }
+}
+
+// Escuchar la búsqueda de película
+document.getElementById('searchButton').addEventListener('click', () => {
+    const query = document.getElementById('query').value;
+    if (query) buscarPelicula(query);
+});
+
+// Cargar el catálogo inicial de películas al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    fetchCatalogo(); // Cargar películas iniciales
+});
+
+
+
+
+
+
+
+
+
 // Validar formulario al enviar
 function validarFormulario(event) {
     event.preventDefault(); // Prevenir el envío del formulario por defecto

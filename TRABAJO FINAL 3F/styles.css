@@ -153,6 +153,45 @@ body{
     right: 10px;
 }
 
+
+/* Centrar el contenedor del formulario de búsqueda */
+#formularioBusqueda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+
+.peliculas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrará horizontalmente los artículos */
+    gap: 20px;
+}
+
+.peliculas article {
+    width: 200px;
+    text-align: center; /* Centrará el contenido dentro del artículo */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la imagen y el texto dentro del artículo */
+}
+
+.peliculas img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px; /* Agrega espacio entre la imagen y el título */
+}
+
+.peliculas h2, .peliculas p {
+    text-align: center; /* Asegura que el texto también esté centrado */
+}
+
+
+
 /*----------------------------------------------------------------------------------------------------------*/
 /*Formulario*/
 
