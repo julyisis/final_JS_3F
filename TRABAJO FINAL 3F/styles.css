@@ -374,3 +374,105 @@ footer a:hover {
     width: 24px;
     height: 24px;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .contenedor-nav {
+        flex-direction: column;
+    }
+
+    .container-carousel {
+        height: auto;
+    }
+
+    .peliculas {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .formulario {
+        flex-direction: column;
+    }
+
+    .formulario input,
+    .formulario button {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contenedor-nav li {
+        margin: 0 10px;
+    }
+
+    .peliculas {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Estilo para el contenedor del botón hamburguesa */
+.menu-toggle {
+    display: none;  /* Ocultar por defecto en pantallas grandes */
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Estilo para las barras del botón hamburguesa */
+.menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+/* Estilo para la lista de navegación */
+.nav-list {
+    display: flex; /* Mostrar la lista en línea por defecto */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para los elementos de la lista */
+.nav-list li {
+    margin-right: 20px;
+}
+
+/* Estilo para los enlaces del menú */
+.nav-list a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Estilo para mostrar el menú en pantallas pequeñas */
+.nav-list.show {
+    display: block; /* Mostrar el menú cuando se hace clic en el botón */
+}
+
+.nav-list {
+    display: none; /* Ocultar por defecto en pantallas pequeñas */
+    flex-direction: column;  /* Colocar los enlaces en columna */
+    text-align: center; /* Alinear el texto */
+    width: 100%; /* Asegurar que ocupe todo el ancho */
+}
+
+/* Estilos responsivos para móviles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Mostrar el botón hamburguesa en pantallas pequeñas */
+    }
+
+    .nav-list.show {
+        display: flex; /* Mostrar el menú cuando se haga clic en el botón */
+    }
+
+    .nav-list li {
+        padding: 10px 0; /* Espacio entre los enlaces */
+        border-top: 1px solid #ccc;
+    }
+}
