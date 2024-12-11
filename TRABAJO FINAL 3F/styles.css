@@ -1,27 +1,33 @@
 body{
     margin: 0;
     background: antiquewhite;
+    height: 100vh;
+    overflow-x: hidden;
 }
 
 .header-container {
     position: relative; /* Necesario para posicionar el contenido */
-    padding: 20px 0;
+    /* padding: 40px 10; */
+    padding: 0px 0;
+    align-items: center; /* Centra el contenido verticalmente */
 }
 
 .header-container::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(./image/thumbbig-1356453.png); /*imagen de fondo para el header*/
+    top: -20px;
+    left: -100px;
+    right: 0;
+    width: 1519px;
+    height: 400px;
+    /*background-image: url(./image/thumbbig-1356453.png); imagen de fondo para el header*/
+    background-image: url(./image/GhostBusters.jpg);
     background-size: 100% 400px;
     background-position: top;
     background-repeat: no-repeat;
     opacity: 0.8; /* Opacidad solo para la imagen */
     z-index: 1; /* Coloca la imagen detrás del contenido */
-    
+    align-items: center; /* Centra verticalmente */
 }
 
 .titulo, #header {
@@ -31,64 +37,78 @@ body{
 
 
 .titulo{
-    font-family: "Jaro", sans-serif;
+    font-family: "Lemonada", cursive;
     font-weight: bold;
-    color: #ae57ff;
-    font-size: 44px;
-    display: flex;
-    justify-content: center;
-    border: 7px solid;
-    border-radius: 10px;
-    
+    color: #29034d;
+    font-size: 15px;
+    display: flexbox; /* Ajustar al tamaño del texto */
+    text-align: center; /* Centrar texto dentro del cuadro */
+    /*border: 4px solid;
+    border-radius: 5px;*/
+    padding: 0px 0px; /* Espaciado interno */   
+    margin: 0;
 }
 
 .contenedor-nav{
     display: flex;
     justify-content: space-around;
-    padding: 20px;
+    padding: 0px;
     list-style: none;
 }
 
 .contenedor-nav li{
+    padding-top: 250px;
     width: 100px;
 }
 
 .contenedor-nav li a{
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 26px;
     font-weight: bold;
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 4px;
+}
+
+.contenedor-nav li a:hover{
+    color: #500a92;
+    border: 2px solid #500a92;
+    border-radius: 50px;
+    padding: 4px;
 }
 
 .titulo-inicio{
-    font-family: "Ruwudu", serif;
-    font-weight: 400;
+    /*font-family: "Ruwudu", serif;*/
+    font-family: "Lemonada", arial, helvetica;
+    font-weight: bold;
     font-style: normal;
+    text-align: center;
+    font-size: 40px;
 }
 
 .texto{
-    font-family: "Lora", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    border: 7px solid;
-    border-radius: 10px;
-    border-color: cadetblue;
+    font-family: "Lora", serif;    
+    display: inline-block;
+    border: 3px solid;
+    border-radius: 10px;    
+    border-color: #000000;
     padding: 8px 20px;
+    font-size: x-large;
 }
 /*---------------------------------------------------------------------------------------------------------*/
-.titulo-destacados{
-    font-family: "Merriweather", serif;
-    margin: 0 30px;
+.titulo-destacados{    
+    font-family: "Lemonada", arial, helvetica;
+    margin: 15px 30px;
     font-style: normal;
     font-weight: bold;
     font-size: xx-large;
 }
 
 .destacados{
-    height: 100vh;
+    height: 60vh;
     display: flex;
-    margin: 35px;
+    margin: 15px;
     justify-content: center;
     padding: 20px; 
 }
@@ -153,6 +173,12 @@ body{
     right: 10px;
 }
 
+/*-----------------------------------------------------------------------------------------------------------*/
+
+.container{
+    padding-top: 56px;
+    padding-bottom: 13px;
+}
 
 /* Centrar el contenedor del formulario de búsqueda */
 #formularioBusqueda {
@@ -195,6 +221,11 @@ body{
 /*----------------------------------------------------------------------------------------------------------*/
 /*Formulario*/
 
+.centrado{
+    font-family: "Lemonada", cursive;
+    font-size: xx-large;
+}
+
 /* Estilos para los campos válidos e inválidos */
 input.valido, textarea.valido {
     border: 2px solid green; /* Borde verde para campos válidos */
@@ -217,18 +248,19 @@ input.invalido, textarea.invalido {
 /* Estilo del mensaje de éxito */
 .mensaje-exito {
     color: green;
-    font-size: 1rem;
+    font-size: 17px;
     text-align: center;
     margin-top: 20px;
     padding: 5px 0;
+    
 }
 
 /* Estilo para los botones de acción en el formulario */
 .boton {
     width: 100%;
-    padding: 12px;
-    background-color: #4CAF50;
-    color: white;
+    padding: 12px;    
+    background-color:#4bc19df0;
+    color: #500a92;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -285,6 +317,60 @@ input.invalido, textarea.invalido {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
+    padding: 6px;
+    border-top: 2px solid #ccc;
+}
+
+.busqueda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.busqueda input{
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.busqueda button{
+    padding: 4px;
+    border-radius: 6px;
+}
+
+footer {
+    background-color: #29034d;
+    color: white;
+    padding: 10px 0;
+    padding-bottom: 1px;
+    text-align: center;
+    margin-top: auto; /* Asegura que el footer esté en la parte inferior */
+}
+
+/* Enlaces en el footer */
+footer a {
+    color: #ffd700; /* Color dorado */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Redes sociales */
+.social-icons {
+    margin: 10px 0;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
 }
