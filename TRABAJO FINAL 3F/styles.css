@@ -1,11 +1,14 @@
 body{
     margin: 0;
     background: antiquewhite;
+    height: 100vh;
 }
 
 .header-container {
     position: relative; /* Necesario para posicionar el contenido */
-    padding: 20px 0;
+    /* padding: 40px 10; */
+    padding: 0px 0;
+    align-items: center; /* Centra el contenido verticalmente */
 }
 
 .header-container::before {
@@ -13,15 +16,17 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(./image/thumbbig-1356453.png); /*imagen de fondo para el header*/
+    right: 0;
+    width: 1550px;
+    height: 400px;
+    /*background-image: url(./image/thumbbig-1356453.png); imagen de fondo para el header*/
+    background-image: url(./image/GhostBusters.jpg);
     background-size: 100% 400px;
     background-position: top;
     background-repeat: no-repeat;
     opacity: 0.8; /* Opacidad solo para la imagen */
     z-index: 1; /* Coloca la imagen detrás del contenido */
-    
+    align-items: center; /* Centra verticalmente */
 }
 
 .titulo, #header {
@@ -31,39 +36,44 @@ body{
 
 
 .titulo{
-    font-family: "Jaro", sans-serif;
+    font-family: "Lemonada", cursive;
     font-weight: bold;
-    color: #ae57ff;
-    font-size: 44px;
-    display: flex;
-    justify-content: center;
-    border: 7px solid;
-    border-radius: 10px;
-    
+    color: #29034d;
+    font-size: 12px;
+    display: flexbox; /* Ajustar al tamaño del texto */
+    text-align: center; /* Centrar texto dentro del cuadro */
+    /*border: 4px solid;
+    border-radius: 5px;*/
+    padding: 0px 0px; /* Espaciado interno */   
+    margin: 0;
 }
 
 .contenedor-nav{
     display: flex;
     justify-content: space-around;
-    padding: 20px;
+    padding: 35px;
     list-style: none;
 }
 
 .contenedor-nav li{
+    padding-top: 250px;
     width: 100px;
 }
 
 .contenedor-nav li a{
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 26px;
     font-weight: bold;
 }
 
 .titulo-inicio{
-    font-family: "Ruwudu", serif;
-    font-weight: 400;
+    /*font-family: "Ruwudu", serif;*/
+    font-family: "Lemonada", arial, helvetica;
+    font-weight: bold;
     font-style: normal;
+    text-align: center;
+    font-size: 3rem;
 }
 
 .texto{
@@ -71,24 +81,27 @@ body{
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    border: 7px solid;
+    display: inline-block;
+    border: 3px solid;
     border-radius: 10px;
-    border-color: cadetblue;
+    /*border-color: cadetblue;*/
+    border-color: #000000;
     padding: 8px 20px;
 }
 /*---------------------------------------------------------------------------------------------------------*/
 .titulo-destacados{
-    font-family: "Merriweather", serif;
-    margin: 0 30px;
+    /*font-family: "Merriweather", serif;*/
+    font-family: "Lemonada", arial, helvetica;
+    margin: 15 30px;
     font-style: normal;
     font-weight: bold;
     font-size: xx-large;
 }
 
 .destacados{
-    height: 100vh;
+    height: 60vh;
     display: flex;
-    margin: 35px;
+    margin: 15px;
     justify-content: center;
     padding: 20px; 
 }
@@ -195,6 +208,10 @@ body{
 /*----------------------------------------------------------------------------------------------------------*/
 /*Formulario*/
 
+.centrado{
+    font-family: "Lemonada", cursive;
+}
+
 /* Estilos para los campos válidos e inválidos */
 input.valido, textarea.valido {
     border: 2px solid green; /* Borde verde para campos válidos */
@@ -227,7 +244,8 @@ input.invalido, textarea.invalido {
 .boton {
     width: 100%;
     padding: 12px;
-    background-color: #4CAF50;
+    /*background-color: #4CAF50;*/
+    background-color:#5cedc1f0;
     color: white;
     border: none;
     border-radius: 5px;
@@ -285,6 +303,49 @@ input.invalido, textarea.invalido {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     padding: 20px;
+}
+
+.busqueda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #29034d;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto; /* Asegura que el footer esté en la parte inferior */
+}
+
+/* Enlaces en el footer */
+footer a {
+    color: #ffd700; /* Color dorado */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Redes sociales */
+.social-icons {
+    margin: 10px 0;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
 }
