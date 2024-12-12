@@ -226,6 +226,4 @@ function limpiarFormulario() {
     });
 }
 
-// Seleccionamos el botón hamburguesa y la lista del menú
-const menuToggle = document.querySelector('.menu-toggle');
-const navList = document.querySelector('.nav-list');
+
