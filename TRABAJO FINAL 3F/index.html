@@ -4,25 +4,30 @@
 <head>
     <title>Mi Sitio Web OnePage</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
     <div class="header-container">
-        <div class="titulo"><h1>TRABAJO FINAL TECNO 3F</h1></div>
+        <div class="titulo">
+            <h1>TRABAJO FINAL TECNO 3F</h1>
+        </div>
         <header id="header">
             <nav>
-                <div class="hamburger" id="hamburger"> &#9776; <!-- Código HTML para el icono de hamburguesa --> </div>
-                <ul class="contenedor-nav" id="nav-links">
+               
+                <ul class="contenedor-nav nav-list" id="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#slider">Destacados</a></li>
                     <li><a href="#Catalogo">API</a></li>
                     <li><a href="#formularioRegistro">Contacto</a></li>
                 </ul>
+
             </nav>
         </header>
     </div>
@@ -60,22 +65,25 @@
                         <img src="./image/Venom.jpg" alt="Venom">
                     </section>
                 </div>
-                <div class="btn-left"><</div> <!-- Corregido aquí el error en el código -->
-                <div class="btn-right">></div>
+
+                <!-- Botones de navegación -->
+                <div class="btn-left">&#10094;</div> <!-- Botón izquierdo (anterior) -->
+                <div class="btn-right">&#10095;</div> <!-- Botón derecho (siguiente) -->
             </div>
         </div>
+
 
         <div class="container">
             <div id="Catalogo">
                 <h1 class="titulo-destacados">Catálogo de películas</h1>
                 <div id="output" class="peliculas"></div>
             </div>
-        
-        <div class="busqueda">
-            <!-- Campo de búsqueda para que el usuario ingrese el nombre de la película -->
-            <input type="text" id="query" placeholder="Buscar película por nombre">
-            <button type="submit" id="searchButton" disabled>Buscar Película</button>
-        </div>
+
+            <div class="busqueda">
+                <!-- Campo de búsqueda para que el usuario ingrese el nombre de la película -->
+                <input type="text" id="query" placeholder="Buscar película por nombre">
+                <button type="submit" id="searchButton" disabled>Buscar Película</button>
+            </div>
             <div id="output"></div>
         </div>
 
@@ -104,7 +112,7 @@
             </form>
             <p id="exitoFormulario" class="mensaje-exito"></p>
         </div>
-    
+
 
     </main>
 
@@ -114,8 +122,8 @@
 <footer>
     <p>&copy; 2024 TRABAJO FINAL TECNO 3F. Todos los derechos reservados.</p>
     <p>
-        <a href="#">Inicio</a> | 
-        <a href="#">Sobre Nosotros</a> | 
+        <a href="#">Inicio</a> |
+        <a href="#">Sobre Nosotros</a> |
         <a href="#">Contacto</a>
     </p>
     <div class="social-icons">
@@ -130,4 +138,5 @@
         </a>
     </div>
 </footer>
+
 </html>

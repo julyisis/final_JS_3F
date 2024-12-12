@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     background: antiquewhite;
     height: 100vh;
@@ -6,62 +6,56 @@ body{
 }
 
 .header-container {
-    position: relative; /* Necesario para posicionar el contenido */
-    /* padding: 40px 10; */
-    padding: 0px 0;
-    align-items: center; /* Centra el contenido verticalmente */
+    position: relative;
+    padding: 0;
+    margin-bottom: 60px; /* Agregado para crear espacio debajo del header */
 }
 
 .header-container::before {
     content: '';
     position: absolute;
-    top: -20px;
-    left: -100px;
-    right: 0;
-    width: 1519px;
+    top: 0; /* Asegura que la imagen quede alineada con la parte superior */
+    left: 0;
+    width: 100%;
     height: 400px;
-    /*background-image: url(./image/thumbbig-1356453.png); imagen de fondo para el header*/
     background-image: url(./image/GhostBusters.jpg);
-    background-size: 100% 400px;
-    background-position: top;
-    background-repeat: no-repeat;
-    opacity: 0.8; /* Opacidad solo para la imagen */
-    z-index: 1; /* Coloca la imagen detrás del contenido */
-    align-items: center; /* Centra verticalmente */
+    background-size: cover;
+    background-position: top center;
+    opacity: 0.8;
+    z-index: 1;
 }
 
 .titulo, #header {
-    position: relative; /* Asegura que queden sobre el pseudo-elemento */
+    position: relative;
     z-index: 2; /* Coloca el contenido sobre la imagen de fondo */
 }
 
-
-.titulo{
+.titulo {
     font-family: "Lemonada", cursive;
     font-weight: bold;
     color: #29034d;
     font-size: 15px;
-    display: flexbox; /* Ajustar al tamaño del texto */
-    text-align: center; /* Centrar texto dentro del cuadro */
-    /*border: 4px solid;
-    border-radius: 5px;*/
-    padding: 0px 0px; /* Espaciado interno */   
+    display: flex;
+    justify-content: center; /* Asegura que el texto esté centrado */
+    text-align: center;
+    padding: 0px 0;
     margin: 0;
+    z-index: 2;
 }
 
-.contenedor-nav{
+.contenedor-nav {
     display: flex;
     justify-content: space-around;
     padding: 0px;
     list-style: none;
 }
 
-.contenedor-nav li{
+.contenedor-nav li {
     padding-top: 220px;
     width: 100px;
 }
 
-.contenedor-nav li a{
+.contenedor-nav li a {
     text-decoration: none;
     color: black;
     font-size: 26px;
@@ -71,15 +65,14 @@ body{
     padding: 4px;
 }
 
-.contenedor-nav li a:hover{
+.contenedor-nav li a:hover {
     color: #500a92;
     border: 2px solid #500a92;
     border-radius: 50px;
     padding: 4px;
 }
 
-.titulo-inicio{
-    /*font-family: "Ruwudu", serif;*/
+.titulo-inicio {
     font-family: "Lemonada", arial, helvetica;
     font-weight: bold;
     font-style: normal;
@@ -87,30 +80,31 @@ body{
     font-size: 40px;
 }
 
-.texto{
-    font-family: "Lora", serif;    
+.texto {
+    font-family: "Lora", serif;
     display: inline-block;
     border: 3px solid;
-    border-radius: 10px;    
+    border-radius: 10px;
     border-color: #000000;
     padding: 8px 20px;
     font-size: x-large;
 }
+
 /*---------------------------------------------------------------------------------------------------------*/
-.titulo-destacados{    
+
+.titulo-destacados {
     font-family: "Lemonada", arial, helvetica;
     margin: 15px 30px;
-    font-style: normal;
-    font-weight: bold;
     font-size: xx-large;
+    z-index: 3; /* Asegura que el texto esté por encima de otros elementos */
 }
 
-.destacados{
+.destacados {
     height: 60vh;
     display: flex;
-    margin: 15px;
+    margin-top: 80px; /* Espacio adicional entre el header y los destacados */
     justify-content: center;
-    padding: 20px; 
+    padding: 20px;
 }
 
 .container-carousel {
@@ -127,7 +121,7 @@ body{
     width: 600%; /* 100% * cantidad de imágenes */
     height: 100%;
     display: flex;
-    transition: transform 1.5s ease-in-out; /* Agrega transición aquí */
+    transition: transform 1.5s ease-in-out;
 }
 
 .slider-section {
@@ -142,8 +136,7 @@ body{
     border-radius: 15px;
 }
 
-.btn-left,
-.btn-right {
+.btn-left, .btn-right {
     display: flex;
     position: absolute;
     top: 50%;
@@ -154,13 +147,12 @@ body{
     font-weight: 600;
     cursor: pointer;
     color: #ffffff81;
-    transform: translate(0,-50%);
+    transform: translate(0, -50%);
     transition: .5s ease;
     user-select: none;
 }
 
-.btn-left:hover,
-.btn-right:hover {
+.btn-left:hover, .btn-right:hover {
     background-color: #333333d4;
     color: #fff;
 }
@@ -175,7 +167,7 @@ body{
 
 /*-----------------------------------------------------------------------------------------------------------*/
 
-.container{
+.container {
     padding-top: 56px;
     padding-bottom: 13px;
 }
@@ -188,53 +180,49 @@ body{
     margin-bottom: 20px;
 }
 
-
-
 .peliculas {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centrará horizontalmente los artículos */
+    justify-content: center;
     gap: 20px;
 }
 
 .peliculas article {
     width: 200px;
-    text-align: center; /* Centrará el contenido dentro del artículo */
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra la imagen y el texto dentro del artículo */
+    align-items: center;
 }
 
 .peliculas img {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
-    margin-bottom: 10px; /* Agrega espacio entre la imagen y el título */
+    margin-bottom: 10px;
 }
 
 .peliculas h2, .peliculas p {
-    text-align: center; /* Asegura que el texto también esté centrado */
+    text-align: center;
 }
-
-
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*Formulario*/
 
-.centrado{
+.centrado {
     font-family: "Lemonada", cursive;
     font-size: xx-large;
 }
 
 /* Estilos para los campos válidos e inválidos */
 input.valido, textarea.valido {
-    border: 2px solid green; /* Borde verde para campos válidos */
-    background-color: #e8f9e8; /* Fondo ligeramente verde */
+    border: 2px solid green;
+    background-color: #e8f9e8;
 }
 
 input.invalido, textarea.invalido {
-    border: 2px solid red; /* Borde rojo para campos inválidos */
-    background-color: #f9e8e8; /* Fondo ligeramente rojo */
+    border: 2px solid red;
+    background-color: #f9e8e8;
 }
 
 /* Estilo de mensaje de error */
@@ -252,14 +240,13 @@ input.invalido, textarea.invalido {
     text-align: center;
     margin-top: 20px;
     padding: 5px 0;
-    
 }
 
 /* Estilo para los botones de acción en el formulario */
 .boton {
     width: 100%;
-    padding: 12px;    
-    background-color:#4bc19df0;
+    padding: 12px;
+    background-color: #4bc19df0;
     color: #500a92;
     border: none;
     border-radius: 5px;
@@ -270,13 +257,13 @@ input.invalido, textarea.invalido {
 
 .boton:hover {
     background-color: #45a049;
-    transform: scale(1.05); /* Efecto de escalado */
+    transform: scale(1.05);
 }
 
 /* Mejorar la visibilidad de los errores */
 .campo input:focus, .campo textarea:focus {
-    border: 2px solid #4CAF50; /* Borde verde al hacer focus */
-    outline: none; /* Elimina el borde azul por defecto al hacer focus */
+    border: 2px solid #4CAF50;
+    outline: none;
 }
 
 /* Contenedor del formulario */
@@ -329,12 +316,12 @@ input.invalido, textarea.invalido {
     margin-bottom: 20px;
 }
 
-.busqueda input{
+.busqueda input {
     padding: 4px;
     border-radius: 6px;
 }
 
-.busqueda button{
+.busqueda button {
     padding: 4px;
     border-radius: 6px;
 }
@@ -345,12 +332,11 @@ footer {
     padding: 10px 0;
     padding-bottom: 1px;
     text-align: center;
-    margin-top: auto; /* Asegura que el footer esté en la parte inferior */
+    margin-top: auto;
 }
 
-/* Enlaces en el footer */
 footer a {
-    color: #ffd700; /* Color dorado */
+    color: #ffd700;
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
@@ -360,7 +346,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Redes sociales */
 .social-icons {
     margin: 10px 0;
 }
@@ -375,162 +360,68 @@ footer a:hover {
     height: 24px;
 }
 
-
-
 /*---------------------------------------------------------------------------------------------------*/
 
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .hamburger { 
-        display: block; 
-        font-size: 2rem; 
-        cursor: pointer; 
-        padding-top: 292px
-    } 
-
-    .header-container::before {
-        width: 867px;        
-    }
-
-    .contenedor-nav.active { 
-        display: flex; 
-    }
-
-    .contenedor-nav { 
-        display: none; 
-        flex-direction: column; 
-        width: 100%; 
-        margin-left: 48px;
-    } 
-
-    .contenedor-nav li{
-        padding-top: 10px;
-        margin: 0.5rem 0;
-    }
-
-    .container-carousel {
-        height: auto;
-    }
-
-    .peliculas {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-
-    .formulario {
-        flex-direction: column;
-    }
-
-    .formulario input,
-    .formulario button {
-        width: 100%;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    body{
-        overflow: hidden;
-    }
-    .hamburger {
-        display: none;
-    }
-
-    .header-container::before {
-        width: 730px;
-        left: 0;
-    }
-
-    .contenedor-nav.active{
-        margin-top: -20px;
-    }
-
-    .contenedor-nav li {
-        justify-content: center;
-        display: flex;
-        margin: 0px 0 7px;
-    }
-
-    .texto{
-        padding: 8px 0;
-        font-size: 20px;
-    }
-
-    .peliculas {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
-
-
-
-
-
-
-
-/*
-/* Estilo para el contenedor del botón hamburguesa *//*
-.menu-toggle {
-    display: none;  /* Ocultar por defecto en pantallas grandes *//*
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
+/* Estilo para el botón hamburguesa */
+.hamburger {
+    display: none;
+    font-size: 2rem;
     cursor: pointer;
+    padding-top: 25px;
+}
+
+.hamburger:hover {
+    color: #500a92;
+}
+
+.hamburger.active {
+    color: #500a92;
+}
+
+/* Menú de navegación en dispositivos pequeños */
+.menu-mobile {
+    display: none;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.menu-mobile li {
+    text-align: center;
     padding: 10px;
 }
 
-/* Estilo para las barras del botón hamburguesa *//*
-.menu-toggle .bar {
-    width: 30px;
-    height: 4px;
-    background-color: black;
-    border-radius: 5px;
-}
-
-/* Estilo para la lista de navegación *//*
-.nav-list {
-    display: flex; /* Mostrar la lista en línea por defecto *//*
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Estilo para los elementos de la lista *//*
-.nav-list li {
-    margin-right: 20px;
-}
-
-/* Estilo para los enlaces del menú *//*
-.nav-list a {
+.menu-mobile li a {
     text-decoration: none;
     color: black;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
-/* Estilo para mostrar el menú en pantallas pequeñas *//*
-.nav-list.show {
-    display: block; /* Mostrar el menú cuando se hace clic en el botón *//*
+.menu-mobile li a:hover {
+    color: #500a92;
+    border: 2px solid #500a92;
+    border-radius: 50px;
+    padding: 4px;
 }
 
-.nav-list {
-    display: none; /* Ocultar por defecto en pantallas pequeñas *//*
-    flex-direction: column;  /* Colocar los enlaces en columna *//*
-    text-align: center; /* Alinear el texto *//*
-    width: 100%; /* Asegurar que ocupe todo el ancho *//*
-}
-
-/* Estilos responsivos para móviles *//*
+/* Mostrar el menú hamburguesa en pantallas pequeñas */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex; /* Mostrar el botón hamburguesa en pantallas pequeñas *//*
+    .hamburger {
+        display: block;
     }
 
-    .nav-list.show {
-        display: flex; /* Mostrar el menú cuando se haga clic en el botón *//*
+    .menu-mobile {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 1;
     }
 
-    .nav-list li {
-        padding: 10px 0; /* Espacio entre los enlaces *//*
-        border-top: 1px solid #ccc;
+    .menu-mobile li {
+        padding: 15px 0;
     }
 }

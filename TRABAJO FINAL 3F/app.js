@@ -229,22 +229,3 @@ function limpiarFormulario() {
 // Seleccionamos el botón hamburguesa y la lista del menú
 const menuToggle = document.querySelector('.menu-toggle');
 const navList = document.querySelector('.nav-list');
-
-// Agregamos un listener para el clic en el botón hamburguesa
-menuToggle.addEventListener('click', () => {
-    navList.classList.toggle('show');  // Alterna la visibilidad de la lista de navegación
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Verifica si los elementos existen
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navList = document.querySelector(".nav-list");
-
-    if (menuToggle && navList) {
-        menuToggle.addEventListener("click", function () {
-            navList.classList.toggle("show");
-        });
-    } else {
-        console.error("No se pudo encontrar el botón o el menú.");
-    }
-});
