@@ -57,7 +57,7 @@ body{
 }
 
 .contenedor-nav li{
-    padding-top: 250px;
+    padding-top: 220px;
     width: 100px;
 }
 
@@ -375,10 +375,38 @@ footer a:hover {
     height: 24px;
 }
 
+
+
+/*---------------------------------------------------------------------------------------------------*/
+
+
 /* Media Queries */
 @media (max-width: 768px) {
-    .contenedor-nav {
-        flex-direction: column;
+    .hamburger { 
+        display: block; 
+        font-size: 2rem; 
+        cursor: pointer; 
+        padding-top: 292px
+    } 
+
+    .header-container::before {
+        width: 867px;        
+    }
+
+    .contenedor-nav.active { 
+        display: flex; 
+    }
+
+    .contenedor-nav { 
+        display: none; 
+        flex-direction: column; 
+        width: 100%; 
+        margin-left: 48px;
+    } 
+
+    .contenedor-nav li{
+        padding-top: 10px;
+        margin: 0.5rem 0;
     }
 
     .container-carousel {
@@ -400,8 +428,31 @@ footer a:hover {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
+    body{
+        overflow: hidden;
+    }
+    .hamburger {
+        display: none;
+    }
+
+    .header-container::before {
+        width: 730px;
+        left: 0;
+    }
+
+    .contenedor-nav.active{
+        margin-top: -20px;
+    }
+
     .contenedor-nav li {
-        margin: 0 10px;
+        justify-content: center;
+        display: flex;
+        margin: 0px 0 7px;
+    }
+
+    .texto{
+        padding: 8px 0;
+        font-size: 20px;
     }
 
     .peliculas {
@@ -409,9 +460,16 @@ footer a:hover {
     }
 }
 
-/* Estilo para el contenedor del botón hamburguesa */
+
+
+
+
+
+
+/*
+/* Estilo para el contenedor del botón hamburguesa *//*
 .menu-toggle {
-    display: none;  /* Ocultar por defecto en pantallas grandes */
+    display: none;  /* Ocultar por defecto en pantallas grandes *//*
     flex-direction: column;
     gap: 5px;
     background: none;
@@ -420,7 +478,7 @@ footer a:hover {
     padding: 10px;
 }
 
-/* Estilo para las barras del botón hamburguesa */
+/* Estilo para las barras del botón hamburguesa *//*
 .menu-toggle .bar {
     width: 30px;
     height: 4px;
@@ -428,20 +486,20 @@ footer a:hover {
     border-radius: 5px;
 }
 
-/* Estilo para la lista de navegación */
+/* Estilo para la lista de navegación *//*
 .nav-list {
-    display: flex; /* Mostrar la lista en línea por defecto */
+    display: flex; /* Mostrar la lista en línea por defecto *//*
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* Estilo para los elementos de la lista */
+/* Estilo para los elementos de la lista *//*
 .nav-list li {
     margin-right: 20px;
 }
 
-/* Estilo para los enlaces del menú */
+/* Estilo para los enlaces del menú *//*
 .nav-list a {
     text-decoration: none;
     color: black;
@@ -449,30 +507,30 @@ footer a:hover {
     font-weight: bold;
 }
 
-/* Estilo para mostrar el menú en pantallas pequeñas */
+/* Estilo para mostrar el menú en pantallas pequeñas *//*
 .nav-list.show {
-    display: block; /* Mostrar el menú cuando se hace clic en el botón */
+    display: block; /* Mostrar el menú cuando se hace clic en el botón *//*
 }
 
 .nav-list {
-    display: none; /* Ocultar por defecto en pantallas pequeñas */
-    flex-direction: column;  /* Colocar los enlaces en columna */
-    text-align: center; /* Alinear el texto */
-    width: 100%; /* Asegurar que ocupe todo el ancho */
+    display: none; /* Ocultar por defecto en pantallas pequeñas *//*
+    flex-direction: column;  /* Colocar los enlaces en columna *//*
+    text-align: center; /* Alinear el texto *//*
+    width: 100%; /* Asegurar que ocupe todo el ancho *//*
 }
 
-/* Estilos responsivos para móviles */
+/* Estilos responsivos para móviles *//*
 @media (max-width: 768px) {
     .menu-toggle {
-        display: flex; /* Mostrar el botón hamburguesa en pantallas pequeñas */
+        display: flex; /* Mostrar el botón hamburguesa en pantallas pequeñas *//*
     }
 
     .nav-list.show {
-        display: flex; /* Mostrar el menú cuando se haga clic en el botón */
+        display: flex; /* Mostrar el menú cuando se haga clic en el botón *//*
     }
 
     .nav-list li {
-        padding: 10px 0; /* Espacio entre los enlaces */
+        padding: 10px 0; /* Espacio entre los enlaces *//*
         border-top: 1px solid #ccc;
     }
 }

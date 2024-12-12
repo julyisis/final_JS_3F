@@ -2,49 +2,41 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Sitio Web OnePage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="titulo">
-                <h1>TRABAJO FINAL TECNO 3F</h1>
-            </div>
-
-            <!-- Botón hamburguesa -->
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-
-            <!-- Menú de navegación -->
-            <nav class="menu" id="menu">
-                <ul class="contenedor-nav">
+    <div class="header-container">
+        <div class="titulo"><h1>TRABAJO FINAL TECNO 3F</h1></div>
+        <header id="header">
+            <nav>
+                <div class="hamburger" id="hamburger"> &#9776; <!-- Código HTML para el icono de hamburguesa --> </div>
+                <ul class="contenedor-nav" id="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#slider">Destacados</a></li>
                     <li><a href="#Catalogo">API</a></li>
                     <li><a href="#formularioRegistro">Contacto</a></li>
                 </ul>
             </nav>
-        </div>
-    </header>
+        </header>
+    </div>
 
     <main>
-        <!-- Sección Inicio -->
         <section id="inicio">
             <h1 class="titulo-inicio">Tecno Movie</h1>
-            <p class="texto">Estamos emocionados de tenerte a bordo en nuestra comunidad de cinefilos. En esta página, podrás encontrar calificaciones y reseñas de películas de todo el mundo, junto con sus respectivos trailers. Nuestro objetivo es brindarte una plataforma para descubrir nuevas películas, compartir opiniones y conectarte con otros amantes del cine.</p>
+            <p class="texto">Estamos emocionados de tenerte a bordo en nuestra comunidad de cinefilos. En esta página,
+                podrás encontrar calificaciones y reseñas de películas de todo el mundo, junto con sus respectivos
+                trailers. Nuestro objetivo es brindarte una plataforma para descubrir nuevas películas, compartir
+                opiniones y conectarte con otros amantes del cine.</p>
         </section>
 
-        <!-- Sección Destacados -->
+        <!-- Carousel de imagenes -->
         <h2 class="titulo-destacados">Destacados</h2>
         <div class="destacados">
             <div class="container-carousel">
@@ -68,26 +60,26 @@
                         <img src="./image/Venom.jpg" alt="Venom">
                     </section>
                 </div>
-                <div class="btn-left">&#10094;</div>
-                <div class="btn-right">&#10095;</div>
+                <div class="btn-left"><</div> <!-- Corregido aquí el error en el código -->
+                <div class="btn-right">></div>
             </div>
         </div>
 
-        <!-- Sección Catálogo de Películas -->
         <div class="container">
             <div id="Catalogo">
                 <h1 class="titulo-destacados">Catálogo de películas</h1>
-                <div class="peliculas" id="output"></div>
+                <div id="output" class="peliculas"></div>
             </div>
-
-            <!-- Búsqueda -->
-            <div class="busqueda">
-                <input type="text" id="query" placeholder="Buscar película por nombre">
-                <button type="submit" id="searchButton" disabled>Buscar Película</button>
-            </div>
+        
+        <div class="busqueda">
+            <!-- Campo de búsqueda para que el usuario ingrese el nombre de la película -->
+            <input type="text" id="query" placeholder="Buscar película por nombre">
+            <button type="submit" id="searchButton" disabled>Buscar Película</button>
+        </div>
+            <div id="output"></div>
         </div>
 
-        <!-- Formulario de Registro -->
+        <!-- Formulario de registro -->
         <div class="contenedor">
             <h3 class="centrado">Formulario de Registro</h3>
             <form id="formularioRegistro" onsubmit="return validarFormulario(event)" class="formulario">
@@ -112,30 +104,30 @@
             </form>
             <p id="exitoFormulario" class="mensaje-exito"></p>
         </div>
+    
 
     </main>
 
     <script src="./app.js"></script>
-
-    <footer>
-        <p>&copy; 2024 TRABAJO FINAL TECNO 3F. Todos los derechos reservados.</p>
-        <p>
-            <a href="#">Inicio</a> | 
-            <a href="#">Sobre Nosotros</a> | 
-            <a href="#">Contacto</a>
-        </p>
-        <div class="social-icons">
-            <a href="https://facebook.com" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-            </a>
-            <a href="https://twitter.com" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
-            </a>
-            <a href="https://instagram.com" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
-            </a>
-        </div>
-    </footer>
 </body>
 
+<footer>
+    <p>&copy; 2024 TRABAJO FINAL TECNO 3F. Todos los derechos reservados.</p>
+    <p>
+        <a href="#">Inicio</a> | 
+        <a href="#">Sobre Nosotros</a> | 
+        <a href="#">Contacto</a>
+    </p>
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+        </a>
+    </div>
+</footer>
 </html>
