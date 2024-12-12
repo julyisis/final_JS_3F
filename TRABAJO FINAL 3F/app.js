@@ -296,8 +296,8 @@ function limpiarFormulario() {
 }
 
 // Seleccionamos el botón hamburguesa y la lista del menú
-const menuToggle = document.querySelector('.menu-toggle');
-const navList = document.querySelector('.nav-list');
+const menuToggle = document.querySelector('.hamburguer');
+const navList = document.querySelector('.menu');
 
 // Agregamos un listener para el clic en el botón hamburguesa
 menuToggle.addEventListener('click', () => {
